@@ -33,7 +33,7 @@ $grid_column_count = at_responsive_grid_column_count();
 $grid_values = at_responsive_get_content_grid_values();
 $grid_classes = at_responsive_get_content_grid_classes();
 ?>
-<div class="container main">
+<div class="container main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
     <div class="layout-row row">
         <div class="layout-column complementary col-md-<?php echo $grid_values['row']; ?> <?php echo $grid_classes['row']; ?>">
             <div class="row widgets-row widget-area loop-start">

@@ -23,7 +23,7 @@
 global $pagename, $at_theme_custom, $theme_namespace;
 ?>
 <!doctype html>
-<html itemscope itemtype="http://schema.org/Product" <?php language_attributes(); ?>>
+<html itemscope itemtype="http://schema.org/WebPage" <?php language_attributes(); ?>>
     <head>
         <title><?php wp_title('|', true, 'right'); ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -55,8 +55,8 @@ global $pagename, $at_theme_custom, $theme_namespace;
     $at_phone_number = $at_theme_custom->get_phone();
     $at_companylogo = at_responsive_get_companylogo();
     ?>
-    <body <?php echo at_responsive_body_id(); ?> <?php body_class(); ?>>
-        <header>
+    <body <?php echo at_responsive_body_id(); ?> <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+        <header itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
             <!-- Beginning of desktop header content -->
             <div class="header-wrapper container-fluid hidden-xs">
                 <div class="at_responsive_hero">

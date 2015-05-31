@@ -36,7 +36,7 @@ switch ($layout_type) {
             $desktop_columns = $grid_values['home'];
             $mobile_columns = $grid_values['home'] * 2;
             ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns} col-sm-{$mobile_columns} "); ?> role="main">
+            <article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns} col-sm-{$mobile_columns} "); ?> itemtype="http://schema.org/BlogPosting" itemprop="blogPost" role="main">
                 <div class="layout-wrapper">
                     <div class="content-wrapper eq-height">
                         <div class="row inner-content-row">
@@ -52,7 +52,7 @@ switch ($layout_type) {
                                 </div>            
                             </div>            
                             <div class="col-md-12">
-                                <div class="entry-content">
+                                <div class="entry-content" itemprop="text">
                                     <?php at_responsive_post_excerpt(); ?>
                                     <div style="width:100%; height: 0px; clear: both;"></div>
                                 </div>
@@ -81,7 +81,7 @@ switch ($layout_type) {
     default : {
             $desktop_columns = $grid_values['archive'];
             ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns}"); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns}"); ?> itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
                 <div class="layout-wrapper">
                     <div class="content-wrapper">
                         <div class="row inner-content-row">
@@ -97,7 +97,7 @@ switch ($layout_type) {
                                 <div class="entry-meta hidden-xs">
                                     <?php echo at_responsive_post_entry(); ?>
                                 </div>
-                                <div class="entry-content">
+                                <div class="entry-content" itemprop="text">
                                     <?php at_responsive_post_excerpt(); ?>
                                     <div style="width:100%; height: 0px; clear: both;"></div>
                                 </div>
@@ -117,7 +117,7 @@ switch ($layout_type) {
     case 'singular' : {
             $desktop_columns = $grid_values['single'];
             ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns}"); ?> role="main">
+            <article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns}"); ?> itemtype="http://schema.org/BlogPosting" itemprop="blogPost" role="main">
                 <div class="layout-wrapper">
                     <div class="content-wrapper">
                         <div class="entry-header row">
@@ -135,7 +135,7 @@ switch ($layout_type) {
                         </div>
                         <div class="row inner-content-row">
                             <div class="col-md-12">
-                                <div class="entry-content">
+                                <div class="entry-content" itemprop="text">
                                     <?php
                                     the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', $theme_namespace));
                                     wp_link_pages(array(
@@ -161,17 +161,17 @@ switch ($layout_type) {
     case '404' : {
             $desktop_columns = $grid_values['single'];
             ?>
-            <article id="post-404" class="<?php echo "col-md-{$desktop_columns}"; ?> post-404 page type-page status-publish hentry" role="main">
+            <article id="post-404" class="<?php echo "col-md-{$desktop_columns}"; ?> post-404 page type-page status-publish hentry" itemtype="http://schema.org/BlogPosting" itemprop="blogPost" role="main">
                 <div class="layout-wrapper">
                     <div class="content-wrapper">
                         <div class="entry-header row">
                             <div class="entry-heading col-sm-12">
-                                <h1 class="entry-title"><?php _e('Nothing Found for "' . get_search_query() . '"', $theme_namespace); ?></h1>
+                                <h1 class="entry-title" itemprop="headline"><?php _e('Nothing Found for "' . get_search_query() . '"', $theme_namespace); ?></h1>
                             </div>
                         </div>
                         <div class="row inner-content-row">
                             <div class="col-md-12">
-                                <div class="entry-content">
+                                <div class="entry-content" itemprop="text">
                                     <?php locate_template('/templates/404.php', true, false); ?>
                                 </div><!-- .entry-content -->
                             </div>

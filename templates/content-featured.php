@@ -23,7 +23,7 @@ $grid_values = at_responsive_get_content_grid_values();
 $desktop_columns = $grid_values['featured'];
 $mobile_columns = $grid_values['featured'] * 2;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns} col-sm-{$mobile_columns}"); ?> role="main">
+<article id="post-<?php the_ID(); ?>" <?php post_class("col-md-{$desktop_columns} col-sm-{$mobile_columns}"); ?> itemtype="http://schema.org/BlogPosting" itemprop="blogPost" role="main">
     <div class="layout-wrapper">
         <div class="content-wrapper eq-height">
             <div class="row inner-content-row">
@@ -39,7 +39,7 @@ $mobile_columns = $grid_values['featured'] * 2;
                     </div>            
                 </div>            
                 <div class="col-md-12">
-                    <div class="entry-content">
+                    <div class="entry-content" itemprop="text">
                         <?php at_responsive_post_excerpt(); ?>
                         <div style="width:100%; height: 0px; clear: both;"></div>
                     </div>

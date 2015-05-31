@@ -519,6 +519,7 @@ HEADER .at_responsive_hero #slider .soliloquy-controls .soliloquy-pager
 	background: #FFF;
 	height: 51px;
 	margin-left: 0px;
+    padding: 5px;
 }
 .navbar.navbar-inverse .navbar-icons > .icon-button:first-child > .dropdown
 {
